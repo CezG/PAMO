@@ -1,47 +1,30 @@
 package com.bmicalculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
-
-    private EditText personWeight;
-    private EditText personHeight;
-    private TextView tvBMI;
-    private Button btnCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        personWeight = findViewById(R.id.personWeight);
-        personHeight = findViewById(R.id.personHeight);
-        tvBMI = findViewById(R.id.textViewBMI);
-        btnCheck = findViewById(R.id.buttonCheck);
-
-
-        btnCheck.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                int weight = Integer.parseInt(String.valueOf(personWeight.getText()));
-                int height = Integer.parseInt(String.valueOf(personHeight.getText()));
-                BMI bmi = new BMI(new Person(weight,height));
-
-                tvBMI.setText( "Your BMI value is = "+ bmi.getValue() + " and weight is "  +bmi.rateBmi().toUpperCase());
-            }
-        }
-
-        );
-
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController);
     }
-
 
 }

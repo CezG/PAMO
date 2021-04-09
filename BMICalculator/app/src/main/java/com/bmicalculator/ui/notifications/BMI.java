@@ -1,6 +1,6 @@
-package com.bmicalculator;
+package com.bmicalculator.ui.notifications;
 
-import static java.lang.Math.round;
+import com.bmicalculator.Person;
 
 public class BMI {
     private Person person;
@@ -8,7 +8,7 @@ public class BMI {
 
     public BMI(Person person) {
         this.person = person;
-        this.value = Math.round(this.person.getWeight() / Math.pow((double) this.person.getHeight() / 100, 2)*100.0)/100.0;
+        this.value = Math.round(this.person.getWeight() / Math.pow((double) this.person.getHeight() / 100, 2) * 100.0) / 100.0;
     }
 
     public double getValue() {
@@ -33,6 +33,7 @@ public class BMI {
             if (value < 16) return txt = "severe thinness"; //wygłodzenie
         }
         return txt;
+
     }
 
 }

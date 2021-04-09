@@ -1,5 +1,7 @@
 package com.bmicalculator;
 
+import com.bmicalculator.ui.notifications.BMI;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,7 +12,6 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-
     @Test
     public void check_rateBmi() {
         BMI bmi = new BMI(new Person(67, 178));

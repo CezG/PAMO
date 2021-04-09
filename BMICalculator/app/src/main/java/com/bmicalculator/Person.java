@@ -1,5 +1,6 @@
 package com.bmicalculator;
 
+
 public class Person {
     private int weight;
     private int height;
@@ -24,4 +25,5 @@ public class Person {
     public void setHeight(int height) {
         this.height = height;
     }
+
 }
