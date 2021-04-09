@@ -13,8 +13,6 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Switch switchSex ;
-    private TextView tvSex;
     private EditText personWeight;
     private EditText personHeight;
     private TextView tvBMI;
@@ -25,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        switchSex = findViewById(R.id.switchSex);
-        tvSex = findViewById(R.id.textViewSex);
         personWeight = findViewById(R.id.personWeight);
         personHeight = findViewById(R.id.personHeight);
         tvBMI = findViewById(R.id.textViewBMI);

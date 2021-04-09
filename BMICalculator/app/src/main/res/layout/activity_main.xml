@@ -14,23 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:orientation="horizontal">
-
-            <Switch
-                android:id="@+id/switchSex"
-                android:layout_width="211dp"
-                android:layout_height="43dp"
-                android:text="Sex"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/textViewSex"
-                android:layout_width="199dp"
-                android:layout_height="32dp"
-                android:text="Male"
-                android:textSize="24sp" />
-
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
