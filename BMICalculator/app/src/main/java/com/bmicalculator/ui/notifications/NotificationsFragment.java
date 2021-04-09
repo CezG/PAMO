@@ -46,9 +46,10 @@ public class NotificationsFragment extends Fragment {
 
                 btnCheck.setOnClickListener(new View.OnClickListener() {
                                                 public void onClick(View v) {
-                                                    if (TextUtils.isEmpty(personWeight.getText()) || TextUtils.isEmpty(personHeight.getText())) {
-//                                                        tvBMI.setText("The weight and height is required");
-                                                        tvBMI.setError("The weight and height is required");
+                                                    if (TextUtils.isEmpty(personWeight.getText())) {
+                                                        personWeight.setError("The weight is required");
+                                                    }else if(TextUtils.isEmpty(personHeight.getText())){
+                                                        personHeight.setError("The height is required");
                                                     } else {
                                                         int weight = Integer.parseInt(String.valueOf(personWeight.getText()));
                                                         int height = Integer.parseInt(String.valueOf(personHeight.getText()));
