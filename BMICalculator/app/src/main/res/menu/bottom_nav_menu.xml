@@ -7,13 +7,13 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
-
-    <item
         android:id="@+id/navigation_bmi"
         android:icon="@drawable/ic_bmi"
         android:title="@string/title_bmi" />
+    <item
+        android:id="@+id/navigation_food"
+        android:icon="@drawable/ic_baseline_fastfood_24"
+        android:title="@string/title_food"
+        android:visible="true" />
 
 </menu>
