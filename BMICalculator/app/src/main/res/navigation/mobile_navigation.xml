@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.bmicalculator.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_bmi"
+            app:destination="@id/navigation_bmi" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_food"
@@ -21,5 +25,9 @@
         android:id="@+id/navigation_bmi"
         android:name="com.bmicalculator.ui.bmi.BmiFragment"
         android:label="@string/title_bmi"
-        tools:layout="@layout/fragment_bmi" />
+        tools:layout="@layout/fragment_bmi" >
+        <action
+            android:id="@+id/action_navigation_bmi_to_navigation_food"
+            app:destination="@id/navigation_food" />
+    </fragment>
 </navigation>
