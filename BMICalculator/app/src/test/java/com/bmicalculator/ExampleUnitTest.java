@@ -1,6 +1,6 @@
 package com.bmicalculator;
 
-import com.bmicalculator.ui.notifications.BMI;
+import com.bmicalculator.ui.bmi.BMI;
 
 import org.junit.Test;
 

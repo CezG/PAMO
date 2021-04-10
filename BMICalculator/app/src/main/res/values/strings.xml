@@ -2,7 +2,8 @@
     <string name="app_name">BMICalculator</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_bmi">BMI</string>
+    <string name="hint_age">please enter age</string>
     <string name="hint_weight">please enter weight</string>
     <string name="hint_height">please enter height</string>
 </resources>

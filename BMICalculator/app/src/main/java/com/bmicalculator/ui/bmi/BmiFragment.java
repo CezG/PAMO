@@ -1,4 +1,4 @@
-package com.bmicalculator.ui.notifications;
+package com.bmicalculator.ui.bmi;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -20,64 +20,80 @@ import androidx.lifecycle.ViewModelProvider;
 import com.bmicalculator.Person;
 import com.bmicalculator.R;
 
-public class NotificationsFragment extends Fragment {
+public class BmiFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private BmiViewModel bmiViewModel;
 
     private Switch switchSex;
     private TextView tvSex;
+    private EditText personAge;
     private EditText personWeight;
     private EditText personHeight;
-    private TextView tvBMI;
+    private TextView tvBmi;
+    private TextView tvBmr;   // basal metabolic rate
     private Button btnCheck;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
+        bmiViewModel =
+                new ViewModelProvider(this).get(BmiViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_bmi, container, false);
+        tvBmr = root.findViewById(R.id.text_bmr);
         switchSex = root.findViewById(R.id.switchSex);
         tvSex = root.findViewById(R.id.textViewSex);
+        personAge = root.findViewById(R.id.personAge);
         personWeight = root.findViewById(R.id.personWeight);
         personHeight = root.findViewById(R.id.personHeight);
-        tvBMI = root.findViewById(R.id.textViewBMI);
+        tvBmi = root.findViewById(R.id.textViewBMI);
         btnCheck = root.findViewById(R.id.buttonCheck);
 
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        bmiViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            private boolean isFemale;
+
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
-
+//                final boolean isFemale;
                 switchSex.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        if(isChecked) {
+                        if (isChecked) {
+                            isFemale = true;
                             tvSex.setText("Female");
-                        }else{
+                        } else {
+                            isFemale = false;
                             tvSex.setText("Male");
-                        };
+                        }
+                        ;
                     }
                 });
 
 
                 btnCheck.setOnClickListener(new View.OnClickListener() {
                                                 public void onClick(View v) {
-                                                    if (TextUtils.isEmpty(personWeight.getText())) {
+                                                    if (TextUtils.isEmpty(personAge.getText())) {
+                                                        personAge.setError("The age is required");
+                                                    } else if (TextUtils.isEmpty(personWeight.getText())) {
                                                         personWeight.setError("The weight is required");
                                                     } else if (TextUtils.isEmpty(personHeight.getText())) {
                                                         personHeight.setError("The height is required");
                                                     } else {
+                                                        int age = Integer.parseInt(String.valueOf(personAge.getText()));
                                                         int weight = Integer.parseInt(String.valueOf(personWeight.getText()));
                                                         int height = Integer.parseInt(String.valueOf(personHeight.getText()));
-                                                        BMI bmi = new BMI(new Person(weight, height));
-                                                        tvBMI.setError(null);
-                                                        tvBMI.setText("Your BMI value is = " + bmi.getValue() + " and weight is " + bmi.rateBmi().toUpperCase());
+                                                        Person person = new Person(isFemale, age, weight, height);
+                                                        BMI bmi = new BMI(person);
+                                                        BMR bmr = new BMR(person);
+                                                        tvBmi.setError(null);
+                                                        tvBmi.setText("Your BMI value is = " + bmi.calculate() + " and weight is " + bmi.rateBmi().toUpperCase());
+                                                        tvBmr.setText("Your BMR value is = " + bmr.calculate() + " kcal");
                                                     }
                                                 }
                                             }
 
                 );
+
 
             }
         });

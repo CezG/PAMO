@@ -1,4 +1,4 @@
-package com.bmicalculator.ui.notifications;
+package com.bmicalculator.ui.bmi;
 
 import com.bmicalculator.Person;
 
@@ -9,7 +9,7 @@ public class BMI {
 
     public BMI(Person person) {
         this.person = person;
-        this.value = Math.round(this.person.getWeight() / Math.pow((double) this.person.getHeight() / 100, 2) * 100.0) / 100.0;
+
     }
 
     public double getValue() {
@@ -28,7 +28,12 @@ public class BMI {
         this.level = level;
     }
 
+    public double calculate() {
+        return value = Math.round(this.person.getWeight() / Math.pow((double) this.person.getHeight() / 100, 2) * 100.0) / 100.0;
+    }
+
     public String rateBmi() {
+        calculate();
         String txt = "";
 
         while (txt.isEmpty()) {
@@ -44,6 +49,8 @@ public class BMI {
         return txt;
 
     }
+
+
 
 }
 
