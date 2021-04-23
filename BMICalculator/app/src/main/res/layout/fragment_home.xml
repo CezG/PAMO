@@ -26,6 +26,7 @@
         android:id="@+id/imgCalculate"
         android:layout_width="271dp"
         android:layout_height="216dp"
+        android:contentDescription="@string/logo_content_description"
         android:src="@drawable/ic_calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

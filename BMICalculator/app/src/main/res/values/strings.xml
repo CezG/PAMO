@@ -6,4 +6,12 @@
     <string name="hint_age">please enter age</string>
     <string name="hint_weight">please enter weight</string>
     <string name="hint_height">please enter height</string>
+    <string name="logo_content_description">Hello in BMI Calculator</string>
+    <string name="img_food__content_description">Food for you</string>
+    <string name="hint_switch_sex">Sex</string>
+    <string name="hint_txt_view_sex">Male</string>
+    <string name="hint_txt_view_age">Age</string>
+    <string name="hint_txt_view_height">Height</string>
+    <string name="hint_txt_view_weight">Weight</string>
+    <string name="hint_check_button">Check</string>
 </resources>
