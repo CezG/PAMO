@@ -1,7 +1,19 @@
-package com.bmicalculator.ui;
+package com.bmicalculator.ui.chart;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+
 public class ChartViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
+    private MutableLiveData<String> mText;
+
+    public ChartViewModel() {
+        mText = new MutableLiveData<>();
+        mText.setValue("This is notifications fragment");
+    }
+
+    public LiveData<String> getText() {
+        return mText;
+    }
 }

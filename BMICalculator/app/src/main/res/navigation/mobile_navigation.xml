@@ -20,14 +20,20 @@
         android:name="com.bmicalculator.ui.food.FoodFragment"
         android:label="@string/title_food"
         tools:layout="@layout/fragment_food" />
+    <fragment
+        android:id="@+id/navigation_chart"
+        android:name="com.bmicalculator.ui.chart.ChartFragment"
+        android:label="@string/title_chart"
+        tools:layout="@layout/fragment_chart" />
+    <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="com.bmicalculator.ui.quiz.QuizFragment"
+        android:label="@string/title_quiz"
+        tools:layout="@layout/fragment_quiz" />
 
     <fragment
         android:id="@+id/navigation_bmi"
         android:name="com.bmicalculator.ui.bmi.BmiFragment"
         android:label="@string/title_bmi"
-        tools:layout="@layout/fragment_bmi" >
-        <action
-            android:id="@+id/action_navigation_bmi_to_navigation_food"
-            app:destination="@id/navigation_food" />
-    </fragment>
+        tools:layout="@layout/fragment_bmi" />
 </navigation>

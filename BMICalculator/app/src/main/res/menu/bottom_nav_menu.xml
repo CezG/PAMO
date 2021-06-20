@@ -14,6 +14,16 @@
         android:id="@+id/navigation_food"
         android:icon="@drawable/ic_baseline_fastfood_24"
         android:title="@string/title_food"
+        android:visible="false" />
+    <item
+        android:id="@+id/navigation_chart"
+        android:icon="@drawable/ic_chart"
+        android:title="@string/title_chart"
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_quiz"
+        android:icon="@drawable/ic_baseline_question_answer_24"
+        android:title="@string/title_quiz"
         android:visible="true" />
 
 </menu>

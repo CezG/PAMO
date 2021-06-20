@@ -3,6 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_food">Food</string>
     <string name="title_bmi">BMI</string>
+    <string name="title_chart">Chart</string>
+    <string name="title_quiz">Quiz</string>
     <string name="hint_age">please enter age</string>
     <string name="hint_weight">please enter weight</string>
     <string name="hint_height">please enter height</string>
@@ -14,4 +16,9 @@
     <string name="hint_txt_view_height">Height</string>
     <string name="hint_txt_view_weight">Weight</string>
     <string name="hint_check_button">Check</string>
+    <string name="quiz_text_view">How did COVID 19 infect the first human? \n\n A) some Chinese ate a bat \n\n B) got out of a virus laboratory located in the city where the infection was detected \n\n C) aliens implanted it with a special probe</string>
+    <string name="quiz_button_A">A</string>
+    <string name="quiz_button_B">B</string>
+    <string name="quiz_button_C">C</string>
+
 </resources>
