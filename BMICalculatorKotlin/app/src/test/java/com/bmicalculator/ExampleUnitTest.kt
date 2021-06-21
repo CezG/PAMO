@@ -1,4 +1,4 @@
-package com.example.bmicalculatorkotlin
+package com.bmicalculator
 
 import org.junit.Test
 

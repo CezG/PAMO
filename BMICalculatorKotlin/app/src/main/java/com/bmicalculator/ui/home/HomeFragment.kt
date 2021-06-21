@@ -1,4 +1,4 @@
-package com.example.bmicalculatorkotlin.ui.home
+package com.bmicalculator.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.bmicalculatorkotlin.R
-import com.example.bmicalculatorkotlin.databinding.FragmentHomeBinding
+import com.bmicalculator.R
+import com.bmicalculator.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
@@ -21,12 +21,12 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
